@@ -1,0 +1,421 @@
+%
+% Tex source to generate an Assured Shorthold Tenancy Agreement (for use in England and Wales)
+%
+
+% fill in names of tenants - you will have to adjust if more or fewer than four
+\newcommand{\TenantOne}{Firstname Middle Name Lastname}
+\newcommand{\TenantTwo}{Firstname Middle Name Lastname}
+\newcommand{\TenantThree}{Firstname Middle Name Lastname}
+\newcommand{\TenantFour}{Firstname Middle Name Lastname}
+
+% adjust for correct number of tenants
+\newcommand{\Tenant}{\TenantOne, \TenantTwo, \TenantThree \ and \TenantFour}
+
+% defines signature block, to be used at end. Adjust for tenant numbers
+\newcommand{\SignatureBlock}
+{
+\noindent \begin{tabular}{l l}
+\SignatureLine{\Landlord}
+\SignatureLine{\TenantOne}
+\SignatureLine{\TenantTwo} 
+\SignatureLine{\TenantThree}
+\SignatureLine{\TenantFour}
+\end{tabular}
+}
+
+\newcommand{\Landlord}{e.g. Fred Bloggs}
+\newcommand{\StartDate}{e.g. 1st Jan 2018} 
+\newcommand{\Term}{e.g. nine} % words or figures, calendar months
+\newcommand{\Rent}{e.g. 2200} % pound sign will be prefixed
+\newcommand{\Deposit}{e.g. 2000} % ditto
+\newcommand{\Address}{e.g. 31, Acacia Avenue, London, NW15 2AX} 
+\newcommand{\LLEmail}{e.g. fred@email.com}
+\newcommand{\TenEmail}{e.g. joe@email.com}
+\newcommand{\TenTelno}{e.g. 07248493835}
+\newcommand{\LLTelno}{e.g. 07732178618}
+\newcommand{\IsMortgaged}{yes} % 'yes' or 'no'. if property is mortgaged this adds a clause 
+
+% From here you should not need to change anything other than to tweak the layout.
+
+\newcommand{\TitleText}{Assured Shorthold Tenancy Agreement}
+
+\newcommand{\SignatureLine}[1]{#1: & \rule{5cm}{.25pt}\\\\\\}
+
+\newcommand{\EtAl}{} % always blank
+
+% Set the document class to "article" and the base font size to 12 point
+\documentclass[12pt]{article}
+
+% Make the PDF look like a Microsoft Word document
+\usepackage{wordlike}
+
+% This package processes the conditional clauses
+\usepackage{xstring}
+
+% Set margins to one inch on all sides
+\PassOptionsToPackage{margin=1in}{geometry}
+
+% Set line spacing 
+\usepackage{setspace}
+\setstretch{1.25} 
+
+% Left justified text
+\raggedright
+
+% Don't add space to balance up pages
+\raggedbottom
+
+% Adjust page number vertical location.
+\setlength{\footskip}{50pt}
+
+% allow comments
+\usepackage{verbatim}
+
+% override section fonts etc.
+\usepackage{sectsty}
+
+% keep all section header fonts normal size and weight
+\allsectionsfont{\normalsize\mdseries}
+\sectionfont{\MakeUppercase} % unfortunately the original doc. had subsections in uppercase. This is a fix to make them at least consistent.
+
+% allow letter enumeration
+\usepackage{enumitem}
+\setlist[description]{labelindent=1cm} % forces description lists to be indented.
+
+% set the letter style throughout
+\setenumerate[0]{label=(\alph*)}
+
+\begin{document}
+
+% Suppress page number on first page.
+%\thispagestyle{empty}
+\vspace{.5cm}
+
+\begin{center}
+This \textbf{\TitleText} \par dated \textbf{\today} 
+
+is between \par \textbf{\Landlord}  \par and % "\ " is just a space
+\par   \textbf{\Tenant \ \EtAl} \par for the tenancy of  
+
+\textbf{\Address\ } \par from \textbf{\StartDate\  } 
+for \textbf{\Term} calendar months 
+
+at a rent of \textbf{\textsterling \Rent} per calendar month.
+\end{center}
+
+\section{Definitions and interpretation}
+
+\subsection{The definitions and rules of interpretation in this clause apply in this
+agreement:}
+
+\begin{description}\itemsep2pt
+\item[Common Parts]: Common Parts means any part of a building containing
+the Property and any land or premises which the Tenant is entitled under
+the terms of this Tenancy to use in common with the owners or occupiers
+of other dwellings.
+
+\item[Landlord]: A reference in this agreement to the Landlord includes a
+reference to the person who is entitled to the immediate reversion to
+the Tenancy and anyone who becomes entitled, by law, to receive the rent
+payable under this Tenancy.
+
+\item[Tenancy]: A reference in this agreement to the Tenancy is to the tenancy created by this agreement.
+
+\item[Tenant]: A reference to the Tenant includes a reference to anyone who succeeds to or inherits this tenancy on the death of the Tenant.
+
+\item A reference to one gender shall include a reference to the other gender.
+
+\item A reference to the Tenant in the singular form shall include a reference to a many.
+
+\item A reference to a statute (e.g. an Act of Parliament such as the Landlord and Tenant Act 1985) or statutory provision (e.g. a section of an Act – for example section 11 of the 1985 Act) is a reference to it as it is in force for the time-being, taking account of any amendment, extension or re-enactment of the law concerned.
+
+\item References to clauses are to clauses of this agreement.
+
+\end{description}
+
+\subsection{THE PARTIES}
+
+\begin{enumerate}
+\item{This is an agreement for a fixed term assured shorthold tenancy: Between \Landlord\ (``the Landlord'') and \Tenant\ (``the Tenant'').}
+
+\item{The obligations and liabilities of the parties under this agreement are joint and several.}
+\end{enumerate}
+
+\subsection{OTHER OCCUPIERS}
+
+\begin{enumerate}
+\item{The Landlord agrees that, in addition to the Tenant, the following person(s) (who for the avoidance of doubt are not tenant(s)) may live at the Property: the Tenant's children or other dependants who are under 18 years of age at the start of the Tenancy, referred to in this agreement as ``Members of the Tenant's Household''.}
+
+\item{The Tenant must not allow any other adults to live at the property without the written consent of the Landlord which must not be unreasonably withheld or delayed.}
+
+\item{The Tenant must ensure that not more than two households live at the Property.}
+
+\item{Any obligation on the Tenant under this agreement to do or not to do anything shall also require the Tenant not to permit or allow any Member of the Tenant's Household or visitor to do or not to do the same thing.}
+\end{enumerate}
+
+\section{THE PROPERTY AND COMMON PARTS}
+
+The property to be rented has address: \Address \IfSubStr{\IsMortgaged}{yes}{ and the Property is currently subject to a mortgage}.
+
+\subsection{THE TERM AND EXPIRY OF THE FIXED TERM}
+
+\begin{enumerate}
+
+\item{The Tenancy created by this agreement begins on \StartDate\ (``the start date'') and continues for \Term\ calendar months (``the term''), unless terminated early or unless terminated early by mutual agreement between the parties.}
+
+\item{If the Tenant continues to live in the Property after the expiry of the fixed term and no further tenancy has been entered into by the parties, then from the expiry of the fixed term the Tenant shall occupy the Property under a statutory periodic tenancy in accordance with section 5(2) of the Housing Act 1988.}
+
+\item{The tenancy may be terminated at the option of the tenant by giving the landlord notice of at least two months in writing.}
+
+\end{enumerate}
+
+\subsection{TERMINATION BY THE LANDLORD AT THE END OF THE FIXED TERM}
+
+If the Landlord wants the Tenant to leave the Property at the end of the Tenancy, the Landlord must give the Tenant at least two months' notice in writing before the end of the fixed term in accordance with section 21 of the Housing Act 1988 (this is known as a  \emph{Section 21 notice}) or seek possession on one or more of the grounds contained in Schedule 2 to the Housing Act 1988 (if any of those grounds apply).
+
+\subsection{THE RENT}
+\begin{enumerate}
+\item{The rent is \pounds\ \Rent\ per month for the first year or the fixed term whichever is the shorter.}
+
+\item{The Landlord may increase the rent on each review date by a maximum of the percentage change in the Consumer Prices Index over the preceding year. This must be calculated by reference to the last index published before the date on which the Landlord serves the notice and the index published 12 months prior to that.}
+
+\item{The requirements are that the Landlord must serve a rent review notice on the Tenant not less than 28 days but not more than 90 days before the relevant review date specifying the percentage by which the rent will increase on the relevant review date and the new rent payable from the relevant review date.}
+\end{enumerate}
+
+\subsection{PAYMENT OF THE RENT BY THE TENANT}
+\begin{enumerate}
+
+\item{The first payment is to be made on the start date and further payments are to be made each month thereafter on the same day of the month.}
+
+\item{Interest of 3\% above the Bank of England's base rate will be payable on any rent which is more than 14 days overdue. The interest will be payable from the date on which the rent fell due until the date it is paid.}
+
+\item{The rent must be paid by standing order.}
+\end{enumerate}
+
+
+\subsection{THE INVENTORY AND REPORT OF CONDITION}
+
+\begin{enumerate}
+\item{If the Landlord, or someone acting on behalf of the Landlord, has prepared an inventory and/or report of condition, it must be attached to this agreement (see Annex 1).}
+\item{Unless the Landlord receives written comments on or amendments to the inventory and/or report of condition within 14 days of the start of the Tenancy, the Tenant shall be taken as accepting the inventory and report of condition as a full and accurate record of the condition of the Property and its contents.}
+\end{enumerate}
+
+\subsection{THE DEPOSIT}
+\begin{enumerate}
+
+\item{The Tenant is to pay a deposit of \textsterling \Deposit\ by the start date which the landlord will protect in the Deposit Protection Scheme.} 
+
+
+\item{The Tenant agrees that the Landlord may make reasonable deductions from the deposit at the end of the Tenancy for the following purposes:}
+
+\item except for fair wear and tear, to make good any damage to the
+    Property, the Common Parts or any of the items listed in the
+    inventory caused by the Tenant's failure to comply with the Tenant's
+    obligations under this agreement;
+
+\item to replace any items listed in the inventory which are missing from
+    the Property at the end of the Tenancy;
+
+\item to pay any rent which remains unpaid at the end of the Tenancy;
+
+\item where the Tenant has made any addition or alteration to the Property
+    or has redecorated the Property without the Landlord's prior written
+    consent, to cover the reasonable costs incurred by the Landlord in
+    removing or reversing any such addition or alteration or in
+    reinstating the former decorative scheme.
+\end{enumerate}
+
+\section{Tenant's obligations}
+
+\subsection{PAYMENT OF RENT}
+
+The Tenant must pay the rent in advance.
+
+\subsection{PAYMENT OF COUNCIL TAX, UTILITIES AND OTHER CHARGES}
+\begin{enumerate}
+
+\item{The Tenant must pay to the relevant local authority all council tax due in respect of the Property during the Tenancy.}
+
+\item{The Tenant must pay to the relevant suppliers all charges in respect of any electricity, gas or water (including sewerage) services used at or supplied to the Property during the Tenancy and pay all charges to the provider for the use of any telephone, satellite, cable or broadband services at the Property during the Tenancy.}
+
+\item{The Tenant must pay any television licence fee payable in respect of the Property during the Tenancy.}
+
+\item{Where any service has been disconnected as a result of the Tenant's failure to comply with the Tenant's obligation to pay for the service, any reconnection charge will be payable by the Tenant.}
+
+\item{The Tenant must not change energy suppliers without the written consent of the Landlord}
+
+\item{The Tenant must advise the Landlord if he has not received opening accounts for Council Tax and utilities within one month of the Start Date of the tenancy.}
+
+\end{enumerate}
+
+\subsection{USE OF THE PROPERTY, PETS AND PROHIBITED CONDUCT}
+
+\begin{enumerate}
+\item{The Tenant must occupy the Property as the Tenant's only or principal home.}
+\item{The Tenant must not use the Property for the purposes of a business, trade or profession except with the prior written consent of the landlord which must not be unreasonably withheld or delayed. In particular, it will not be unreasonable for the Landlord to withhold consent if there is a reasonable likelihood that the use proposed would:}
+\item{give rise to a tenancy to which Part II of the Landlord and Tenant Act 1954 (business tenancies) applies; or}
+\item{cause a nuisance to the occupiers of neighbouring properties or significantly increase wear and tear to the Property.}
+\item{The Tenant must not use the Property for any illegal, immoral, disorderly or anti-social purposes.}
+\item{The Tenant must not do anything to or on the Property or any Common Parts which may reasonably be considered a nuisance or annoyance to the occupiers of neighbouring properties.}
+
+
+
+\item{The Tenant must not keep any pets or other animals at the Property without the prior written consent of the Landlord which must not be unreasonably withheld or delayed. If permission is given, it may be given on the condition that the Tenant pays an additional reasonable amount towards the deposit.}
+\end{enumerate}
+
+
+\subsection{CARE, MAINTENANCE AND REDECORATION OF THE PROPERTY}
+\begin{enumerate}
+\item{The Tenant must take reasonable care of the Property, any items listed in the inventory and the Common Parts (if any). This includes (but is not limited to):}
+
+\item{taking reasonable steps to keep the Property adequately ventilated and heated so as to prevent damage from condensation;}
+\item{taking reasonable steps to prevent frost damage occurring to any pipes or other installations in the Property, provided the pipes and other installations were adequately insulated at the start of the Tenancy; and}
+\item{disposing of all rubbish in an appropriate manner and at the appropriate time.}
+\item{The Tenant must not make any addition or alteration to the Property or redecorate the Property (or any part of it) without the Landlord's prior written consent which must not be unreasonably withheld or delayed.}
+
+\item{The Tenant must notify the Landlord as soon as reasonably possible about any repairs that are needed to the Property or to any items listed on the inventory for which the Landlord is responsible.}
+\item{The Tenant will be liable for the reasonable cost of repairs where the need for them is attributable to the Tenant's failure to comply with the obligations set out above in this agreement or where the need for repair is attributable to the fault or negligence of the Tenant, any Member of the Tenant's Household or any of the Tenant's visitors.}
+\item{The Tenant shall promptly replace and pay for any broken glass in windows at the Property where the Tenant, any Member of the Tenant's Household or any of the Tenant's visitors cause the breakage.}
+\end{enumerate}
+
+\subsection{SECURITY OF THE PROPERTY AND PERIODS OF ABSENCE OF MORE THAN 28 DAYS}
+\begin{enumerate}
+\item{The Tenant must not leave the Property unoccupied for more than 28 consecutive days without giving notice in writing to the Landlord.}
+\item{The Tenant must take reasonable steps to ensure that the Property is secure whenever the Property is unoccupied.}
+\end{enumerate}
+
+\subsection{ACCESS TO THE PROPERTY BY LANDLORD OR AGENT}
+
+\begin{enumerate}
+\item{Provided the Landlord has given the Tenant at least 24 hours' prior notice in writing, the Tenant must give the Landlord (or any person acting on behalf of the Landlord) access to the Property at reasonable times of day for the following purposes:}
+\item{to inspect its condition and state of repair;}
+
+\item{to carry out the Landlord's repairing obligations and other obligations under this agreement; and}
+\item{to carry out any inspections required by law including (but not limited to) gas safety inspections, fire safety inspections and inspections of any smoke or carbon monoxide alarms installed in the Property and to carry out any works, repairs, maintenance or installations (including the installation of any smoke or carbon monoxide alarm) required by law.}
+
+\item{The Tenant agrees that if the Property is to be unoccupied for a period of more than 28 consecutive days, the Landlord may have access during that period for the purposes of keeping the Property insured and taking such steps as may reasonably be necessary to mitigate the risk of damage to the Property during that period.}
+\item{The Tenant must give the Landlord (or persons acting on the Landlord's behalf) immediate access to the Property in the event of an emergency on the Property.}
+\end{enumerate}
+
+\subsection{ASSIGNMENT AND SUBLETTING}
+\begin{enumerate}
+
+\item{The Tenant must not assign (i.e. transfer to another person) the tenancy, either in whole or in part without the consent of the Landlord in writing. Such consent must not be unreasonably withheld.}
+\item{The Tenant must not sublet the whole of the Property for the entire duration of the Tenancy.}
+\item{The Tenant must not sublet the whole of the Property for any period which is less than the entire duration of the Tenancy without the consent of the Landlord in writing. Such consent must not be unreasonably withheld.}
+\item{The Tenant can request to sublet part of the Property for either the whole or part of the duration of the Tenancy. The Tenant must not sublet any part of the Property without the consent of the Landlord in writing. Such consent must not be unreasonably withheld.}
+
+\end{enumerate}
+
+\subsection{MOVING OUT AT THE END OF THE TENANCY}
+\begin{enumerate}
+\item{Except for fair wear and tear, the Tenant must return the Property and any items listed on the inventory to the Landlord in the same condition and state of cleanliness as they were at the start of the Tenancy.}
+\item{The Tenant must remove all possessions (including any furniture) belonging to the Tenant or any Member of the Tenant's Household or visitor and all rubbish from the Property at the end of the Tenancy. If any such possessions are left at the Property after the Tenancy has ended, the Tenant will be responsible for meeting all reasonable removal and storage charges. The Landlord will remove and store the possessions for one month (other than any perishable items which will be disposed of immediately) and will take reasonable steps to notify the Tenant. If the items are not collected within one month, the Landlord may dispose of the items and the Tenant will be liable for the reasonable costs of disposal. The costs of removal, storage and disposal may be deducted from any sale proceeds.}
+
+
+\item{The Tenant must give vacant possession and return all keys to the Landlord at the end of the Tenancy.}
+\item{The Tenant must provide the Landlord with a forwarding address at the end of the Tenancy.}
+
+\end{enumerate}
+
+\section{Landlord's obligations}
+
+\subsection{TO GIVE THE TENANT POSSESSION AT THE START OF THE TENANCY}
+
+\subsection{The Landlord must give the Tenant possession of the Property at the start of the Tenancy.}
+\subsection{NOT TO INTERFERE WITH THE TENANT'S RIGHT TO QUIET ENJOYMENT OF THE PROPERTY}
+
+{The Landlord must not interrupt or interfere with the Tenant's right to quiet enjoyment of the Property.}
+
+
+\subsection{REPAIR AND MAINTENANCE OF THE PROPERTY AND ITEMS LISTED ON THE INVENTORY}
+\begin{enumerate}
+\item{In accordance with section 11 of the Landlord and Tenant Act 1985 (repairing obligations in short leases) the Landlord shall:}
+
+\item{keep in repair the structure and exterior of the Property (including drains, external pipes, gutters and external windows);}
+\item{keep in repair and proper working order the installations in the Property for the supply of water, gas and electricity and for sanitation (including basins, sinks, baths and sanitary conveniences, but not other fixtures, fittings and appliances for making use of the supply of water, gas or electricity); and}
+
+\item{keep in repair and proper working order the installations in the Property for space heating and heating water.}
+\item{In accordance with section 11 of the Landlord and Tenant Act 1985, the Landlord is not required:}
+\item{to repair anything which the Tenant is liable to repair by virtue of the Tenant's duty to take reasonable care of the Property;}
+\item{to rebuild or reinstate the Property in the case of destruction or damage by fire, storm or flood; or}
+\item{to keep in repair or maintain anything which the Tenant is entitled to remove from the Property.}
+\item{The Landlord must keep in repair and proper working order any furniture, fixtures, fittings and appliances which are listed in the inventory, except where the damage or need for repair is a result of the Tenant's failure to comply with his obligations.}
+
+\end{enumerate}
+
+\subsection{INSURANCE AND RENT SUSPENSION}
+\begin{enumerate}
+
+
+\item{The Landlord must insure the Property against fire, flooding and other risks usually covered by a comprehensive insurance policy and must use all reasonable efforts to arrange for any damage caused by an insured risk to be remedied as soon as possible. The Tenant is responsible for arranging insurance of the Tenant's own belongings.}
+\item{The Landlord must provide the Tenant with a copy of the insurance policy at the request of the Tenant.}
+\item{Where the Property is uninhabitable because of damage caused to the Property by an insured risk then, unless the damage was caused by the Tenant's negligence or failure to comply with the Tenant's obligations under this agreement, the Tenant shall not be required to pay rent until the Property is fit for occupation and use. Landlord's grounds (reasons) for possession during the fixed term}
+
+\end{enumerate}
+
+\subsection{LANDLORD'S STATUTORY GROUNDS (REASONS) FOR POSSESSION DURING THE FIXED TERM}
+
+
+\begin{enumerate}
+
+\item{If any of the grounds (reasons) specified in clause 3.6.2 apply, the Landlord may seek to repossess the Property (sometimes referred to as forfeiture and re-entry) during the fixed term by giving the Tenant notice under section 8 of the Housing Act 1988 of his intention to apply to court for possession and, subsequently, applying to the court for a possession order.}
+\item{The grounds referred to in clause 3.6.1 are the following grounds which are contained in Schedule 2 to the Housing Act 1988:}
+
+\end{enumerate}
+
+\begin{description}
+
+\item[Ground 2] (mortgagee (lender) entitled to possession);
+
+\item[Ground 8] (at least 8 weeks' or two months' rent arrears);
+
+\item[Ground 10] (some rent overdue);
+
+\item[Ground 11] (tenant persistently late in paying rent);
+
+\item[Ground 12] (breach of any term(s) of tenancy agreement);
+
+\item[Ground 13] (condition of property or common parts has deteriorated      due to acts etc. of tenant or other occupant);
+
+\item[Ground 14] (the tenant or other person residing in or visiting the     property is guilty of nuisance / annoyance in the locality or     convicted of a criminal offence in relation to the property or     committed in the locality);
+
+\item[Ground 15] (condition of furniture provided under the tenancy     agreement has deteriorated due to ill-treatment by tenant or other     occupant); and
+
+\item[Ground 17] (landlord was induced to grant the tenancy by a false     statement made knowingly or recklessly by the tenant or a person     acting on the tenant's behalf).
+
+\end{description}
+
+\subsection{LANDLORD'S GROUNDS (REASONS) FOR POSSESSION WHERE THE TENANCY CEASES TO BE AN ASSURED TENANCY}
+
+If the Tenancy ceases to be an assured (shorthold) tenancy, the Landlord reserves the right to end the Tenancy (usually referred to as forfeiture and re-entry) if the rent is unpaid 14 days after becoming payable whether it has been formally demanded or not or if the Tenant is declared bankrupt or if the Tenant breaches any term of this Tenancy.
+
+
+\section{Contact details and service of written notices.}
+
+\subsection{THE LANDLORD'S CONTACT DETAILS AND SERVICE OF NOTICES ON THE LANDLORD}
+
+{The Landlord agrees that any notices given under this agreement which are required to be given in writing may be served on the Landlord by being sent by email to \LLEmail. }
+
+{The Landlord's telephone number is: \LLTelno. } 
+
+
+\subsection{THE TENANT'S CONTACT DETAILS AND SERVICE OF NOTICES ON THE TENANT}
+\begin{enumerate}
+\item{The Tenant agrees that any notices given under this agreement which are required to be given in writing may be served on the Tenant during the Tenancy either by being left at the Property or by being sent to the Tenant at the Property by first class post. Notices shall be taken to be received the day after being left at the Property or the day after posting.}
+
+\item{The Tenant agrees that any notices given under this agreement which are required to be given in writing may, alternatively, be sent by email. Notices sent by email shall be taken to be received the day after being sent. The Tenant's email address for these purposes is: \TenEmail. } For emergency communications the Landlord and his agents will use the lead tenant's telephone number, which is \TenTelno.
+
+\item{Any notice given under section 8 (notice of proceedings for possession) or section 21 (recovery of possession on expiry or termination of assured shorthold tenancy) of the Housing Act 1988 must always be given to the Tenant in hard copy.}
+\end{enumerate}
+
+The parties are signing this \TitleText\ on the date stated in the introductory clause.
+
+\vspace{2cm}
+
+\SignatureBlock
+
+ 
+% last modified on \today\.
+% \end{comment}
+\end{document}

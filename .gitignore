@@ -1,0 +1,6 @@
+# ignore all the odd things that Tex generates
+
+*.aux
+*.log
+*.synctex.gz
+
